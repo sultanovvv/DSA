@@ -1,9 +1,9 @@
 package main
 
-import "DSA/algorithms"
+import "DSA/leetcode"
 
 func main() {
 
-	algorithms.Bfs()
-
+	//algorithms.Bfs()
+	leetcode.SymmetricTree()
 }
