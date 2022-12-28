@@ -1,15 +1,15 @@
 package model
 
-type Dequeue struct {
+type Queue struct {
 	innerSlice []interface{}
 }
 
-func NewDequeue(s ...interface{}) *Dequeue {
+func NewQueue(s ...interface{}) *Queue {
 
-	return &Dequeue{innerSlice: s}
+	return &Queue{innerSlice: s}
 }
 
-func (d *Dequeue) Poll() interface{} {
+func (d *Queue) Poll() interface{} {
 	if len(d.innerSlice) == 0 {
 		return nil
 	}
@@ -18,11 +18,11 @@ func (d *Dequeue) Poll() interface{} {
 	return res
 }
 
-func (d *Dequeue) Offer(elem interface{}) bool {
+func (d *Queue) Offer(elem interface{}) bool {
 	d.innerSlice = append(d.innerSlice, elem)
 	return true
 }
 
-func (d *Dequeue) IsEmpty() bool {
+func (d *Queue) IsEmpty() bool {
 	return len(d.innerSlice) == 0
 }

@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-var vertexQueue *model.Dequeue
+var vertexQueue *model.Queue
 
 type vertex struct {
 	num       int
@@ -49,10 +49,10 @@ func graph() [8]*vertex {
 func Bfs() {
 	g := graph()
 	from := g[7]
+	to := g[0]
 	from.steps = 0
 	from.visited = true
-	vertexQueue = model.NewDequeue(from)
-	to := g[0]
+	vertexQueue = model.NewQueue(from)
 	calcBFS(to)
 	fmt.Printf("from %+v to %+v", from, to)
 }
