@@ -1,22 +1,21 @@
 package leetcode
 
 func mySqrt(x int) int {
-	n := x
-	for {
-		if (n)*(n) <= x {
-			break
-		}
-		n = n - n/2
+	return calcSqrt(1, x, x)
+}
+
+func calcSqrt(l int, h int, x int) int {
+	mid := (l + h) / 2
+
+	if mid == l {
+		return l
 	}
-	for {
-		n++
-		if (n)*(n) > x {
-			n--
-			break
-		}
-		if (n)*(n) == x {
-			break
-		}
+
+	if (mid)*(mid) > x {
+		h = mid
+	} else {
+		l = mid
 	}
-	return n
+
+	return calcSqrt(l, h, x)
 }
