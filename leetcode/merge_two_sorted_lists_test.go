@@ -1,6 +1,7 @@
 package leetcode
 
 import (
+	"DSA/model"
 	"reflect"
 	"testing"
 )
@@ -27,15 +28,14 @@ func TestMergeTwoLists(t *testing.T) {
 }
 
 func bigLinkedListTest(t *testing.T) {
-	al1 := ListNode{Val: 1}
-	al2 := ListNode{Val: 2}
-	al3 := ListNode{Val: 5}
-	al4 := ListNode{Val: 8}
-
-	bl1 := ListNode{Val: 3}
-	bl2 := ListNode{Val: 4}
-	bl3 := ListNode{Val: 6}
-	bl4 := ListNode{Val: 7}
+	al1 := model.ListNode{Val: 1}
+	al2 := model.ListNode{Val: 2}
+	al3 := model.ListNode{Val: 5}
+	al4 := model.ListNode{Val: 8}
+	bl1 := model.ListNode{Val: 3}
+	bl2 := model.ListNode{Val: 4}
+	bl3 := model.ListNode{Val: 6}
+	bl4 := model.ListNode{Val: 7}
 
 	al1.Next = &al2
 	al2.Next = &al3
@@ -80,21 +80,21 @@ func nilLinkedListTest(t *testing.T) {
 }
 
 func singleElemLinkedListTest(t *testing.T) {
-	el1 := ListNode{Val: 10}
-	fl1 := ListNode{Val: 1}
+	el1 := model.ListNode{Val: 10}
+	fl1 := model.ListNode{Val: 1}
 	res := mergeTwoLists(&el1, &fl1)
 
-	if !reflect.DeepEqual(*res, ListNode{1, &ListNode{10, nil}}) {
+	if !reflect.DeepEqual(*res, model.ListNode{1, &model.ListNode{10, nil}}) {
 		t.FailNow()
 	}
 
 }
 
 func halfNilLinkedListTest(t *testing.T) {
-	fl1 := ListNode{Val: 1}
+	fl1 := model.ListNode{Val: 1}
 	res := mergeTwoLists(nil, &fl1)
 
-	if !reflect.DeepEqual(*res, ListNode{1, nil}) {
+	if !reflect.DeepEqual(*res, model.ListNode{1, nil}) {
 		t.FailNow()
 	}
 
