@@ -1,11 +1,8 @@
 package leetcode
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import "DSA/model"
 
-func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
+func mergeTwoLists(list1 *model.ListNode, list2 *model.ListNode) *model.ListNode {
 	if list1 == nil {
 		return list2
 	}
